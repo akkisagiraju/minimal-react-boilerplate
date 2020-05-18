@@ -8,7 +8,7 @@ const config = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: buildPath,
-    filename: 'main.js',
+    filename: 'main.js'
   },
   devServer: {
     contentBase: publicPath,
@@ -16,7 +16,7 @@ const config = {
     port: 3000,
     hot: true,
     publicPath: '/',
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   devtool: 'source-map',
   module: {
@@ -26,12 +26,12 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
+          presets: ['@babel/preset-env', '@babel/preset-react']
+        }
       },
       {
         test: /\.(s*)css$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
@@ -39,21 +39,21 @@ const config = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192, // Convert images < 8kb to base64 strings
-            },
-          },
-        ],
-      },
-    ],
+              limit: 8192 // Convert images < 8kb to base64 strings
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       hash: false,
       template: './public/index.html',
       chunks: ['app'],
-      filename: 'index.html',
-    }),
-  ],
+      filename: 'index.html'
+    })
+  ]
 };
 
 module.exports = config;
