@@ -6,3 +6,4 @@
 - Jest
 - React Testing Library
 - ESLint (w/ rules I prefer)
+- CSS & SASS/SCSS support
